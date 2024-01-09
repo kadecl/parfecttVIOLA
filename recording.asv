@@ -1,0 +1,19 @@
+nbits = 16;
+fs = 44100;
+duration = 10;
+
+info = audiodevinfo;
+info.input.Name
+
+ dialogbox = uiprogressdlg(fig,'Title','Please Wait',...
+        'Message','Opening the application');
+ for i = 1:4
+     dialogbox.Value = (i-1)/4;
+ end
+ dialogbox.Value = 1;
+ dialogbox.Message = "start recording";
+recorder = audiorecorder(fs, nbits, 1, 2);
+pause(5)
+record(recorder, duration);
+pause(duration+1);
+plot(getaudiodata(recorder));
