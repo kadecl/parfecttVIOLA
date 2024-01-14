@@ -1,0 +1,16 @@
+filepath = "./vc/";
+files = dir(filepath);
+
+figure
+tiledlayout(3,4)
+for i = 3:length(files)
+    s = audioread(filepath + files(i).name);
+
+    window = hamming(length(s));
+    s_windowed = s .* window;
+
+    spectol = abs(fft(s_windowed));
+    spectol = spectol(1:ceil(length(spectol)/2));
+    nexttile
+    
+end

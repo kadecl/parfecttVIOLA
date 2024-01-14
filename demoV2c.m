@@ -98,7 +98,7 @@ warning('OFF','MATLAB:audiovideo:audiowrite:dataClipped');
 
 % Phase Vocoder
 % yPV = pvTSM(x,alpha);
-
+sound
 % Phase Vocoder with identity phase locking
 % paramPVpl.phaseLocking = 1;
 % yPVpl = pvTSM(x,alpha,paramPVpl);
