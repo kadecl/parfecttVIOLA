@@ -32,12 +32,3 @@ x = x / gain;
 y = s + ratio * x;
 end
 
-function clippedData = asymmetricCubicSoftClipper(input)
-if input >= 1
-    clippedData = 2/3;
-elseif input > -1
-    clippedData = input.^3 - input;
-else
-    clippedData = -2/3;
-end
-end
