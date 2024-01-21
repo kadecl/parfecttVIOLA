@@ -2,6 +2,7 @@
 % 
 % ]¬‘ñÆC‹{àVKŠóim-kouki@brain.riken.jpj
 % ‘ˆî“c‘åŠw ‹e’r‰p–¾Œ¤‹†º
+% http://speechresearch.fiw-web.net/66.html#qee1e455
 
 clear all;
 [data_before, Fs, NBITS] = audioread('a.aif');
