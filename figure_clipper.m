@@ -1,7 +1,7 @@
 n = 1000;
-t = (1:n)/n;
+t = (0:n-1)/n;
 
-s = 1.1*sin(10*pi*t);
+s = 1.2*sin(10*pi*t);
 c = asymmetricCubicSoftClipper(s);
 
 figure
