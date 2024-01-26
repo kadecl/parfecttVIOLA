@@ -1,4 +1,4 @@
-function clippedData = asymmetricCubicSoftClipper(input)
+function clippedData = SoftClipper(input)
 clippedData = zeros(size(input));
 for i = 1:length(input)
     temp = input(i);
