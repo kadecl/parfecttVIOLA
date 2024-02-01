@@ -7,17 +7,17 @@ c = SoftClipper(s);
 figure
 tiledlayout(2,1)
 nexttile
-plot(s, "linewidth", 2, "displayname", "元信号")
+plot(t, s, "linewidth", 2, "displayname", "元信号")
 hold on
-plot(c, ':', "linewidth", 2, "displayname", "クリッピング後")
-plot(abs(s), "displayname", "元信号の絶対値")
-legend; xlabel("時間"); ylabel("振幅")
+plot(t, c, ':', "linewidth", 2, "displayname", "クリッピング後")
+plot(t, abs(s), "displayname", "元信号の絶対値")
+legend; xlabel("x", "Interpreter", "latex"); ylabel("振幅")
 
 nexttile
-axisfreq = t * 2 * pi;
+axisfreq = t*1000;
 semilogy(axisfreq, abs(fft(s)), "linewidth", 2, "displayname", "元信号")
 hold on
 semilogy(axisfreq, abs(fft(c)), ':', "linewidth", 2, "displayname", "クリッピング後")
-semilogy(axisfreq, abs(fft(abs(s))), ':', "linewidth", 2, "displayname", "元信号の絶対値")
-xlabel("正規化周波数[rad]"); ylabel("振幅")
-legend; xlim([0,0.5]); ylabel("振幅スペクトル")
+semilogy(axisfreq, abs(fft(abs(s))), "linewidth", 1, "displayname", "元信号の絶対値")
+xlabel("周波数 (Hz)"); ylabel("振幅")
+legend; xlim([0,100]); ylabel("振幅スペクトル")
