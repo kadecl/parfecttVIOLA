@@ -4,6 +4,6 @@ function r = evenHarmGenerator(x, offset, A)
 %  A is the coefficient of below of half-wave
 x = x + offset;
 r = zeros(size(x));
-r(x>=0) = x(x>=0).^2;
-r(x<0) = -A*x(x<0).^2;
+r(x>=0) = x(x>=0);
+r(x<0) = A*x(x<0);
 end
