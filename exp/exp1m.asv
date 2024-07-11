@@ -1,0 +1,23 @@
+calc_coef;
+
+gain(6) = 0.2;
+gain(7:10)=0.3;
+gain(15) = 0.4;
+gain(16) = 0.3;
+gain(17) = 0.1;
+opt.coef = linfilt(gain);
+
+figure
+t = tiledlayout('flow');
+nexttile
+plot(gain)
+nexttile([2 1]);
+ax1 = 2*(0:length(y)-1)/length(y);
+semilogy(ax1, abs(fft(y)));
+hold on
+ax2 = 2*(0:length(x1)-1)/length(x1);
+semilogy(ax2, abs(fft(shiftPitch(x1,-19))));
+semilogy(ax2, abs(fft(vn2vc(x1,opt))));
+xlim([0,1])
+
+

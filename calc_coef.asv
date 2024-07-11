@@ -1,0 +1,10 @@
+win = hamming(length(x1));
+t = smoothdata(log10(abs(fft(win.*y))),1000);
+o = smoothdata(log10(abs(fft(win.*shiftPitch(x1,-19)))));
+ratio = t - o;
+gain = ratio(1:end/2);
+
+l = length(gain);
+gain(round(l/3):end) = 0;
+gain = smoothdata(gain,"lowess");
+plot(gain)
